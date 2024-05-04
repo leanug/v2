@@ -1,9 +1,13 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 
-import { Dribbble, Github, ThemeController, Twitter } from '@/components';
+import { Dribbble, Github, Twitter } from '@/components';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  action: ReactNode
+}
+
+export const Header: FC<HeaderProps> = ({ action }) => {
   return (
     <header className="navbar py-4">
       <div className="flex-1">
@@ -21,7 +25,7 @@ export const Header: React.FC = () => {
             <a href="https://github.com/leanug"><Github className="w-8 h-8 fill-current" /></a>
           </li>
           <li>
-            <ThemeController />
+            {action}
           </li>
         </ul>
       </div>

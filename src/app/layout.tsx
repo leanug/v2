@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { Header, Footer, ThemeProvider } from "@/components";
+import { Header, Footer, ThemeController, ThemeWrapper } from "@/components"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,18 +14,18 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
+        <ThemeWrapper>
           <div className={`flex flex-col min-h-screen font-inter`}>
-            <Header />
+            <Header action={<ThemeController />} />
             <main className={`flex-1`}>{children}</main>
             <Footer />
           </div>
-        </ThemeProvider>
+        </ThemeWrapper>
       </body>
     </html>
   );

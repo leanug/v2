@@ -9,7 +9,6 @@ export const Footer: React.FC = () => {
             <Github className="w-6 h-6 fill-current" /> Source
           </a>
         </li>
-        <li className="flex gap-1.5 items-center"><Vercel className="w-6 h-6 fill-current" /> Hosted on Vercel</li>
         <li className="flex gap-1.5 items-center"><Nextjs className="w-6 h-6 fill-current" /> Built with Next</li>
       </ul>
       

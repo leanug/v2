@@ -1,7 +1,9 @@
 import Image from "next/image";
 
 import profilePic from '@/assets/images/leandro-profile.png'
-import { Dribbble, Github, Card, Twitter } from '@/components';
+import { Dribbble, Github, Card, Twitter } from '@/components'
+
+import { projects } from '@/data/projects'
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
             width={162} // Set the width of the image
             height={162} // Set the height of the image
             className="rounded-full" // Add any additional styling classes if needed
-                />
+          />
           </div>
         </div>
 
@@ -23,9 +25,9 @@ export default function Home() {
           <span className="text-xl">Hello, my name is Leandro 👋</span>
         </div>
           
-        <h1 className="text-2xl md:text-6xl mt-2.5 md:mt-6 font-semibold">
+        <h1 className="text-2xl md:text-6xl mt-2.5 md:mt-6 font-medium">
           I'm a web developer and designer from Uruguay.
-        </h1>         
+        </h1>
       </section>
 
       <ul className="px-1 flex items-center gap-4 mt-5 md:mt-8">
@@ -41,10 +43,19 @@ export default function Home() {
         </ul>
 
       <section className="flex flex-wrap justify-center flex-row gap-8 mt-10 md:mt-20">
-        <Card title="Layoutloom" text="Curated website designs across various categories for web developers and ui/ux designers." />
-        <Card title="Layoutloom" text="Curated website designs across various categories for web developers and ui/ux designers." />
-        <Card title="Layoutloom" text="Curated website designs across various categories for web developers and ui/ux designers." />
+      {projects.map((project, index) => (
+        <Card
+          key={index}
+          title={project.title}
+          text={project.text}
+          badge={project.badge}
+          image={project.image}
+          imgAlt={project.imgAlt}
+          url={project.url}
+          link={project.link}
+        />
+      ))}
       </section>
     </div>
-  );
+  )
 }

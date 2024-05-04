@@ -22,7 +22,7 @@ export const ThemeController: React.FC = () => {
 
   useEffect(() => {
     if (isOpen) {
-      const handleOutsideClick = (event) => {
+      const handleOutsideClick = (event: MouseEvent) => {
         if (
           dropdownRef.current &&
           !dropdownRef.current.contains(event.target) &&
@@ -65,10 +65,9 @@ export const ThemeController: React.FC = () => {
           }`
         }>
           <li><input onChange={handleThemeChange} checked={theme === 'light'} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Light" value="light"/></li>
-          <li><input onChange={handleThemeChange} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Dark" value="dark"/></li>
-          <li><input onChange={handleThemeChange} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Cyberpunk" value="cyberpunk"/></li>
-          <li><input onChange={handleThemeChange} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Valentine" value="valentine"/></li>
-          <li><input onChange={handleThemeChange} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua" value="aqua"/></li>
+          <li><input onChange={handleThemeChange} checked={theme === 'dark'} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Dark" value="dark"/></li>
+          <li><input onChange={handleThemeChange} checked={theme === 'cyberpunk'} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Cyberpunk" value="cyberpunk"/></li>
+          <li><input onChange={handleThemeChange} checked={theme === 'aqua'} type="radio" name="theme-dropdown" className="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua" value="aqua"/></li>
         </ul>
       </div>
     </div>
