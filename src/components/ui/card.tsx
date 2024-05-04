@@ -28,7 +28,7 @@ export const Card: React.FC<CardProps> = ({ title, text, badge, image, imgAlt, u
           </div>
         </div>
         <figure>
-          <img src={image?.src ? image?.src : image} alt={imgAlt} width={500} height={500} />
+          <img src={typeof image === 'string' ? image : image.src} alt={imgAlt} width={500} height={500} />
         </figure>
       </CardElement>
     

@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useThemeStore } from '@/store'
 
 export const ThemeController: React.FC = () => {
-  const dropdownRef = useRef(null)
+  const dropdownRef = useRef<HTMLUListElement>(null)
 
   const [isOpen, setIsOpen] = useState(false)
   const {theme, setTheme} = useThemeStore()
@@ -21,24 +21,22 @@ export const ThemeController: React.FC = () => {
   };
 
   useEffect(() => {
-    if (isOpen) {
-      const handleOutsideClick = (event: MouseEvent) => {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target) &&
-          event.target.closest('[id]')?.id !== 'userAsideMenuButton'
-        ) {
-          toggleDropdown()
-        }
+    const checkIfClickedOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        isOpen &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
       }
+    };
 
-      document.addEventListener('click', handleOutsideClick)
+    document.addEventListener("mousedown", checkIfClickedOutside);
 
-      return () => {
-        document.removeEventListener('click', handleOutsideClick)
-      }
-    }
-  }, [isOpen, toggleDropdown])
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [isOpen]);
 
   return (
     <div className="relataive">
