@@ -1,4 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"]
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    ]
+  }
 }
-
