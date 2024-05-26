@@ -1,3 +1,28 @@
+# 🌟 My Portfolio Website
+
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experience in web development.
+
+## 🚀 Stuff Used
+
+- **Next.js**
+- **React**
+- **Zustand**
+- **DaisyUI**
+- **TailwindCSS**
+
+## 📚 Development Dependencies
+
+- **TypeScript**
+- **ESLint**
+- **Prettier**
+- **PostCSS**
+- **Autoprefixer**
+
+## 🛠️ Getting Started
+
+To get started with this project, follow the instructions below:
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
