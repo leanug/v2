@@ -30,7 +30,6 @@ export const ThemeController: React.FC = () => {
         buttonRef.current &&
         !buttonRef.current.contains(event.target as Node)
       ) {
-        console.log('click outside')
         setIsOpen(false)
       }
     }
