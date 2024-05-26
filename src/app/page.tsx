@@ -55,8 +55,6 @@ export default function Home() {
             title={project.title}
             text={project.text}
             badge={project.badge}
-            image={project.image}
-            imgAlt={project.imgAlt}
             url={project.url}
             link={project.link}
           />

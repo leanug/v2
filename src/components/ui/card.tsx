@@ -1,13 +1,9 @@
-import { StaticImageData } from 'next/image'
-import React from 'react'
 import Link from 'next/link'
 
 interface CardProps {
   title: string
   text: string
   badge: string[]
-  image: string | StaticImageData // Permitir tanto URL de imágenes como objetos StaticImageData
-  imgAlt: string
   url: string
   link: string
 }
@@ -16,8 +12,6 @@ export const Card: React.FC<CardProps> = ({
   title,
   text,
   badge,
-  image,
-  imgAlt,
   url,
   link
 }) => {
@@ -41,14 +35,6 @@ export const Card: React.FC<CardProps> = ({
             ))}
         </div>
       </div>
-      <figure>
-        <img
-          src={typeof image === 'string' ? image : image.src}
-          alt={imgAlt}
-          width={500}
-          height={500}
-        />
-      </figure>
     </CardElement>
   )
 }

@@ -1,5 +1,3 @@
-import simjatiCoverImage from '@/assets/images/projects/simjati-cover-dark-bg.png'
-import layoutloomCoverImage from '@/assets/images/projects/layoutloom-cover.png'
 import ponyflyCoverImage from '@/assets/images/projects/ponyfly-cover-min.png'
 
 export const projects = [

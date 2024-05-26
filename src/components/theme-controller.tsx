@@ -7,11 +7,13 @@ import { useThemeStore } from '@/store'
 
 export const ThemeController: React.FC = () => {
   const dropdownRef = useRef<HTMLUListElement>(null)
+  const buttonRef = useRef<HTMLDivElement>(null) // Add ref to the div with role button
 
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useThemeStore()
 
-  const toggleDropdown = (): void => {
+  const toggleDropdown = (event: React.MouseEvent): void => {
+    event.stopPropagation() // Stop the event from propagating to the document
     setIsOpen((prev: boolean) => !prev)
   }
 
@@ -23,20 +25,26 @@ export const ThemeController: React.FC = () => {
   useEffect(() => {
     const checkIfClickedOutside = (event: MouseEvent | TouchEvent) => {
       if (
-        isOpen &&
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
       ) {
+        console.log('click outside')
         setIsOpen(false)
       }
     }
 
-    document.addEventListener('mousedown', checkIfClickedOutside)
+    if (isOpen) {
+      document.addEventListener('mousedown', checkIfClickedOutside)
+      document.addEventListener('touchstart', checkIfClickedOutside)
+    }
 
     return () => {
       document.removeEventListener('mousedown', checkIfClickedOutside)
+      document.removeEventListener('touchstart', checkIfClickedOutside)
     }
-  }, [isOpen])
+  }, [isOpen, setIsOpen])
 
   return (
     <div className="relataive">
@@ -46,12 +54,13 @@ export const ThemeController: React.FC = () => {
           role="button"
           className="btn"
           onClick={toggleDropdown}
+          ref={buttonRef}
         >
           Theme
           <svg
             width="12px"
             height="12px"
-            className={`h-2 w-2 fill-current opacity-60 inline-block transition-transform ${
+            className={`h-3 w-3 fill-current opacity-60 inline-block transition-transform ${
               isOpen ? 'rotate-180' : ''
             }`}
             xmlns="http://www.w3.org/2000/svg"
@@ -109,6 +118,28 @@ export const ThemeController: React.FC = () => {
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
               aria-label="Aqua"
               value="aqua"
+            />
+          </li>
+          <li>
+            <input
+              onChange={handleThemeChange}
+              checked={theme === 'dracula'}
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Dracula"
+              value="dracula"
+            />
+          </li>
+          <li>
+            <input
+              onChange={handleThemeChange}
+              checked={theme === 'cupcake'}
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Cupcake"
+              value="cupcake"
             />
           </li>
         </ul>
