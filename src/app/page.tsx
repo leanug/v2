@@ -37,11 +37,6 @@ export default function Home() {
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/leanugram">
-            <Twitter className="w-8 h-8 fill-current" />
-          </a>
-        </li>
-        <li>
           <a href="https://github.com/leanug">
             <Github className="w-8 h-8 fill-current" />
           </a>
