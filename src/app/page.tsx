@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import profilePic from '@/assets/images/leandro-profile.png'
-import { Dribbble, Github, Card, Twitter } from '@/components'
+import { Dribbble, Github, Card } from '@/components'
 
 import { projects } from '@/data/projects'
 

@@ -1,4 +1,4 @@
-import { Github, Nextjs, Vercel } from '@/components'
+import { Github, Nextjs } from '@/components'
 
 export const Footer: React.FC = () => {
   return (

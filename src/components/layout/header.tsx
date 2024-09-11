@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { FC, ReactNode } from 'react'
 
-import { Dribbble, Github, Twitter } from '@/components'
+import { Dribbble, Github } from '@/components'
 
 interface HeaderProps {
   action: ReactNode

@@ -16,7 +16,6 @@ export const Card: React.FC<CardProps> = ({
   link
 }) => {
   const CardElement = link === '' ? 'a' : Link
-  console.log('CardElement', CardElement)
 
   return (
     <CardElement href={link || url} className="card bg-base-100 w-96 shadow-xl">
