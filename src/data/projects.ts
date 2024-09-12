@@ -18,7 +18,7 @@ export const projects = [
     imgAlt: '',
     link: '',
     url: 'https://www.feedbackrealm.com/'
-  }
+  },
   {
     id: '2',
     title: 'Ocalta.com',
