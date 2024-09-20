@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={spaceGrotesk.className}>
         <ThemeWrapper>
-          <div className={`flex flex-col min-h-screen font-inter`}>
+          <div className={`flex flex-col min-h-screen font-spaceGrotesk`}>
             <Header action={<ThemeController />} />
             <main className={`flex-1`}>{children}</main>
             <Footer />

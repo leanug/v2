@@ -26,7 +26,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-2xl md:text-6xl mt-2.5 md:mt-6 font-medium">
-          I&apos;m a web developer and designer from Uruguay.
+          I&apos;m a web developer and UI designer from Uruguay.
         </h1>
       </section>
 
