@@ -20,16 +20,6 @@ export const projects = [
     url: 'https://www.feedbackrealm.com/'
   },
   {
-    id: '2',
-    title: 'Ocalta.com',
-    text: 'Ocalta is a construction company based in Monterrey. The website was designed to reflect their extensive expertise and build trust with potential clients.',
-    badge: ['UI/UX Design', 'Figma'],
-    image: '',
-    imgAlt: '',
-    link: '',
-    url: 'https://www.ocalta.com/'
-  },
-  {
     id: '3',
     title: 'ScriptingPixels Blog',
     text: 'A web development blog, TypeScript, Webflow and React.',
