@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-interface CardProps {
+type CardProps = {
   title: string
   text: string
   badge: string[]
