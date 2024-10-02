@@ -1,6 +1,4 @@
-import { Github, Nextjs } from '@/components'
-
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="py-8">
       <ul className="flex flex-col md:flex-row justify-center items-center gap-5 ">
@@ -9,13 +7,13 @@ export const Footer: React.FC = () => {
             href="https://github.com/leanug/v2"
             className="flex gap-1.5 items-center"
           >
-            <Github className="w-6 h-6 fill-current" /> Source
+            Source
           </a>
         </li>
-        <li className="flex gap-1.5 items-center">
-          <Nextjs className="w-6 h-6 fill-current" /> Built with Next
-        </li>
+        <li className="flex gap-1.5 items-center">Built with Next.js</li>
       </ul>
     </footer>
   )
 }
+
+export default Footer

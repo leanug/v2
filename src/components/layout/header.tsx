@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React, { FC, ReactNode } from 'react'
 
-import { Dribbble, Github } from '@/components'
-import { siteConfig } from '../../../site-config'
+import { siteConfig } from '@/config/site'
+import SocialIcon from '@/components/ui/social-icons'
 
-interface HeaderProps {
+type HeaderProps = {
   action: ReactNode
 }
 
@@ -19,19 +19,34 @@ export const Header: FC<HeaderProps> = ({ action }) => {
       <div className="flex-none">
         <ul className="px-1 flex items-center gap-4">
           <li>
-            <a className="btn btn-ghost" href={siteConfig.links.feedback}>
+            <a
+              target="_blank"
+              className="btn btn-ghost"
+              href={siteConfig.links.feedback}
+            >
               Feedback
             </a>
           </li>
           <li className="hidden sm:block">
-            <a href={siteConfig.socialLinks.dribbble}>
-              <Dribbble className="w-8 h-8 fill-current" />
-            </a>
+            <SocialIcon
+              kind="github"
+              href={siteConfig.socialLinks.github}
+              size={6}
+            />
           </li>
           <li className="hidden sm:block">
-            <a href={siteConfig.socialLinks.github}>
-              <Github className="w-8 h-8 fill-current" />
-            </a>
+            <SocialIcon
+              kind="youtube"
+              href={siteConfig.socialLinks.youtube}
+              size={6}
+            />
+          </li>
+          <li className="hidden sm:block">
+            <SocialIcon
+              kind="dribbble"
+              href={siteConfig.socialLinks.dribbble}
+              size={6}
+            />
           </li>
           <li>{action}</li>
         </ul>

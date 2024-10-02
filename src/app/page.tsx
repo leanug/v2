@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import profilePic from '@/assets/images/leandro-profile.png'
-import { Dribbble, Github, Card } from '@/components'
-
+import SocialIcon from '@/components/ui/social-icons'
+import Card from '@/components/ui/card'
+import { siteConfig } from '@/config/site'
 import { projects } from '@/data/projects'
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
         <div className="avatar">
           <div className="w-28 rounded-full">
             <Image
-              src={profilePic} // Add the src attribute with the imported image
+              src="/images/leandro-profile.png" // Add the src attribute with the imported image
               alt="Leandro's Profile Picture" // Add the alt attribute for accessibility
               width={162} // Set the width of the image
               height={162} // Set the height of the image
@@ -22,24 +22,37 @@ export default function Home() {
         </div>
 
         <div className="mt-4 md:mt-6">
-          <span className="text-xl">Hello, my name is Leandro 👋</span>
+          <span className="text-xl font-medium">
+            Hello, my name is Leandro 👋
+          </span>
         </div>
 
         <h1 className="text-2xl md:text-6xl mt-2.5 md:mt-6 font-medium">
-          I&apos;m a web developer and UI designer from Uruguay.
+          I&apos;m a web developer from Uruguay.
         </h1>
       </section>
 
       <ul className="px-1 flex items-center gap-4 mt-5 md:mt-8">
         <li>
-          <a href="https://dribbble.com/leanug">
-            <Dribbble className="w-8 h-8 fill-current" />
-          </a>
+          <SocialIcon
+            kind="github"
+            href={siteConfig.socialLinks.github}
+            size={6}
+          />
         </li>
         <li>
-          <a href="https://github.com/leanug">
-            <Github className="w-8 h-8 fill-current" />
-          </a>
+          <SocialIcon
+            kind="dribbble"
+            href={siteConfig.socialLinks.dribbble}
+            size={6}
+          />
+        </li>
+        <li>
+          <SocialIcon
+            kind="youtube"
+            href={siteConfig.socialLinks.youtube}
+            size={6}
+          />
         </li>
       </ul>
 
