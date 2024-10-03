@@ -40,7 +40,7 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
 
   return (
     <a
-      className="text-sm"
+      className={`h-${size} w-${size}`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}
