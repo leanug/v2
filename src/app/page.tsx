@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import SocialIcon from '@/components/ui/social-icons'
+import { FaGithub, FaYoutube, FaDribbble } from 'react-icons/fa'
+
 import Card from '@/components/ui/card'
 import { siteConfig } from '@/config/site'
 import { projects } from '@/data/projects'
@@ -34,25 +35,37 @@ export default function Home() {
 
       <ul className="px-1 flex items-center gap-4 mt-5 md:mt-8">
         <li>
-          <SocialIcon
-            kind="github"
+          <a
             href={siteConfig.socialLinks.github}
-            size={6}
-          />
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub
+              size={32} // Customize size here
+            />
+          </a>
         </li>
         <li>
-          <SocialIcon
-            kind="dribbble"
-            href={siteConfig.socialLinks.dribbble}
-            size={6}
-          />
-        </li>
-        <li>
-          <SocialIcon
-            kind="youtube"
+          <a
             href={siteConfig.socialLinks.youtube}
-            size={6}
-          />
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube
+              size={32} // Customize size here
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href={siteConfig.socialLinks.dribbble}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaDribbble
+              size={32} // Customize size here
+            />
+          </a>
         </li>
       </ul>
 

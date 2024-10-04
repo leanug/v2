@@ -12,7 +12,10 @@ const Card: React.FC<CardProps> = ({ title, text, badge, url, link }) => {
   const CardElement = link === '' ? 'a' : Link
 
   return (
-    <CardElement href={link || url} className="card bg-base-100 w-96 shadow-md">
+    <CardElement
+      href={link || url}
+      className="card bg-base-100 max-w-96 shadow-md"
+    >
       <div className="card-body">
         <h2 className="card-title text-primary">{title}</h2>
         <p>{text}</p>

@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import React, { FC, ReactNode } from 'react'
 
+import { FaGithub, FaYoutube, FaDribbble } from 'react-icons/fa'
+
 import { siteConfig } from '@/config/site'
-import SocialIcon from '@/components/ui/social-icons'
 
 type HeaderProps = {
   action: ReactNode
@@ -18,7 +19,7 @@ export const Header: FC<HeaderProps> = ({ action }) => {
       </div>
       <div className="flex-none">
         <ul className="px-1 flex items-center gap-4">
-          <li>
+          <li className="hidden sm:block">
             <a
               target="_blank"
               className="btn btn-ghost"
@@ -28,25 +29,37 @@ export const Header: FC<HeaderProps> = ({ action }) => {
             </a>
           </li>
           <li className="hidden sm:block">
-            <SocialIcon
-              kind="github"
+            <a
               href={siteConfig.socialLinks.github}
-              size={6}
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub
+                size={32} // Customize size here
+              />
+            </a>
           </li>
           <li className="hidden sm:block">
-            <SocialIcon
-              kind="youtube"
+            <a
               href={siteConfig.socialLinks.youtube}
-              size={6}
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube
+                size={32} // Customize size here
+              />
+            </a>
           </li>
           <li className="hidden sm:block">
-            <SocialIcon
-              kind="dribbble"
+            <a
               href={siteConfig.socialLinks.dribbble}
-              size={6}
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaDribbble
+                size={32} // Customize size here
+              />
+            </a>
           </li>
           <li>{action}</li>
         </ul>

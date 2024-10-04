@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
         <li>
           <a
             href="https://github.com/leanug/v2"
-            className="flex gap-1.5 items-center"
+            className="flex gap-1.5 items-center btn btn-link"
           >
             Source
           </a>
