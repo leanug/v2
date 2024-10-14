@@ -22,11 +22,16 @@ export const Header: FC<HeaderProps> = ({ action }) => {
           <li className="hidden sm:block">
             <a
               target="_blank"
-              className="btn btn-ghost"
+              className="font-semibold text-sm"
               href={siteConfig.links.feedback}
             >
               Feedback
             </a>
+          </li>
+          <li className="hidden sm:block">
+            <Link className="font-semibold text-sm" href="/about">
+              About
+            </Link>
           </li>
           <li className="hidden sm:block">
             <a
