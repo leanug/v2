@@ -20,10 +20,7 @@ const About: React.FC = () => {
         </p>
         <p>
           As I continued to grow, I learned React and Webflow and began working
-          freelance, while also dabbling in a bit of UI design. I worked on a
-          web app for eight months that I never launched and spent another eight
-          months developing a video game with Stencyl that never saw the light
-          of day.
+          freelance, while also dabbling in a bit of UI design.
         </p>
         <p>
           I run a programming channel on YouTube,{' '}
@@ -35,7 +32,8 @@ const About: React.FC = () => {
           >
             @scriptingpixels
           </a>
-          , where I share my coding journey and insights.
+          , where I share my coding journey and insights. I also have a blog
+          where I write about web development and design.
         </p>
       </section>
     </div>
